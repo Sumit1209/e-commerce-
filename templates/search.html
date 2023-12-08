@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %} search {% endblock title %}
+
+{%block body%} 
+
+<div class="Headingss"><h1>Search  Products</h1></div>
+
+{%if stu|length < 1  %}
+<p> No search result </p>
+Your search query -<b> {{nameName}} </b>- did not match any documents.
+<p>Suggestions:</p>
+<ul>
+
+<li>Make sure that all words are spelled correctly.</li>
+<li>Try different keywords.</li>
+<li>Try more general keywords.</li>
+</ul>
+
+{%endif%}
+
+
+
+
+ 
+<div class="container"> 
+    
+      
+          
+  {% for i in stu%}
+          <div class="card">
+              <img class="card-img-top" src='/media/{{i.image}}' alt="Card image cap" >
+              <div class="card-body">
+                  <p class="card-text">{{i.product_name}}</p>
+                  <p class="card-text1">rating</p>
+                  <p class="card-text2">$ {{i.price}}</p>
+                <span id="divpr{{i.id}}" class="divpr">
+                  <button id="pr{{i.id}}"class="carts cart" >add card</button>
+                </span> 
+                <a href='/Detail/{{i.product_name}}'>  <button class="carts">more det.</button></a>
+  
+              </div>
+          </div>
+            
+  
+          {% endfor %}
+</div>
+     
+  
+
+{%endblock body%}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%} {%endblock title%}</title>
+
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style2.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style3.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style4.css">
+    <link rel="stylesheet" type="text/css" href="static/css/login.css">
+
+    <link rel="stylesheet" type="text/css" href="static/css/responsive.css">
+    
+    <script src="https://kit.fontawesome.com/674dfc3618.js" crossorigin="anonymous"></script>
+
+    
+</head> 
+<style>
+ 
+</style>
+<body>
+    <nav class="navbar background h-nav-resp">
+      <ul class="nav-list v-classresp">
+            <div class="logo"><img src="static/img/img.jpg" alt="logo"></div>
+         
+            <li><a href= '/'>Home</a></li>
+            <li><a href= '/about'>About</a></li>
+            <li><a href= '/service'>Services</a></li>
+            <li><a href= '/contact'>Contact</a></li>
+
+
+      {% if user.is_authenticated %}
+      
+     <li> <a  style=" color: white; ">{{user.first_name}} </a></li>
+  
+     <li> <a style="color: #eac33e; margin: 0px 35px ;" href="/logout">LOGOUT</a></li>
+    </ul>  
+    
+     <div class="rightNav v-classresp">
+
+          <form action='/search' method="GET">
+          <input type="text" name="nameName" id="nameName"placeholder="search" value="">
+            <button class="btn btn-sm">search</button>
+          </form>
+
+         
+          </div>
+      <div class="rightNav1 v-classresp">
+          <button class="bt1n bt1n-s1m">Card(<span id="cart">0</span>)</button>
+      </div>    
+      {%else%}
+
+          <div class="rightNav v-classresp">
+          
+            
+          <a href="/signpin">  <button class="btn btn-sm">LOGIN</button> </a>
+          </div>
+    {% endif %}
+
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+
+     
+  {%block body%} 
+
+
+{%endblock body%}
+
+
+
+    <footer>
+        <div class="footage">
+          <div class="col-1">
+            <h3>Useful links</h3>
+            <a href="">About </a>
+            <a href="">Service</a>
+            <a href="">Contact</a>
+            <a href="">Shop</a>
+            <a href="">Blog</a>
+          </div>
+  
+          <div class="col-2">
+            <h3>SEARCH HERE</h3>
+            <form class="formss">
+               <input type="text" placeholder="Your Email Address"><br>
+               <button type="sumbit">Subscribe Now</button>
+          </form>
+          </div>
+          <div class="col-3">
+            <h3>Contact</h3>
+            <p>123,xyz Road BSK <br> Banglore karanatak,India</p>
+            <div class="social-icon">
+              <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-whatsapp"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-linkedin"></i>
+            </div>
+  
+          </div>
+  
+  
+        </div>
+        <p class="text-center">Copyright &copy;2027-All rights reserved by Sumit Kumar </p> 
+  
+      </footer> 
+      <script src="static/js/resp.js"></script>
+      
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+      
+  {%block js%} 
+
+
+  {%endblock js%}   
+      
+  
+  </body>
+  </html>
+  
+
+</body>
+</html>

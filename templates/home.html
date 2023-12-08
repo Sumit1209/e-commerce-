@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock title %}
+
+{%block body%} 
+<marquee onmouseover="stop()" onmouseout="start()"> 
+ <p>skjhkshg</p>&nbsp;&nbsp;
+ 
+
+</marquee>
+<section class=" background1 firstSection"  id="About">
+    <div class="box-main">
+        <div class="firsthalf">
+            <h1 class="text-big"> Give  Workout A New Style !</h1>
+           <p class="text-small">In this world of 7 million people we need to educate all of them .This is the future of an educated world and we proud to say that the future of education is here</p>
+        <div class="button">
+            <button class="btn1">Explore here</button>
+
+        </div>
+        </div>
+       
+    </div>
+
+</section>
+<section >
+    <div class="pic">
+    <div class="pic1">
+        <div ><img src="static/img/style1.jpg" alt="" ></div>
+        <div ><img src="static/img/style2.jpg" alt="" ></div>
+        <div ><img src="static/img/style3.jpg" alt="" ></div>
+    </div>
+</div>
+    
+    </section>
+    <!--heading-->
+    
+    <!---albunm-->
+    <section>
+      
+  <div class="heading"><h1>Feature products</h1></div>
+      
+  <div class=" feature">
+      
+{% for i in pros%}
+          <div class="card">
+            <img class="card-img-top" src='/media/{{i.image1}}' alt="Card image cap" >
+            <div class="card-body">
+                <p class="card-text">{{i.product_name}}</p>
+                <p class="card-text1">rating</p>
+                <p class="card-text2">$ {{i.price}}</p>
+                <button class="carts">add card</button>
+                <a href='/Detail/{{i.product_name}}'><button class="carts">more det.</button></a>
+
+            </div>
+          </div>
+          
+
+        {% endfor %}
+        
+          </div>
+          
+          <a href="/service"><button class="more">more det</button></a>
+   
+
+
+  <!---     cards1
+
+             <div class="card">
+              <img class="card-img-top" src="static/img/style2.jpg" alt="Card image cap" >
+              <div class="card-body">
+                  <p class="card-text">Red printed tshirt</p>
+                  <p class="card-text1">rating</p>
+                  <p class="card-text2"> 500</p>
+                  <button class="cart">add card</button>
+                <button class="cart">more det.</button>
+
+              </div>
+            </div>
+
+               cards1
+
+          <div class="card">
+            <img class="card-img-top" src="static/img/style2.jpg" alt="Card image cap" >
+            <div class="card-body">
+                <p class="card-text">Red printed tshirt</p>
+                <p class="card-text1">rating</p>
+                <p class="card-text2"> 500</p>
+                <button class="cart">add card</button>
+                <button class="cart">more det.</button>
+
+            </div>
+          </div>
+
+         
+
+  ---->
+        </div>
+
+        <div class="center">
+          <div class="pagination">
+          {%if pros.has_previous%}
+              <a href="/?page={{pros.previous_page_number}}">&laquo;</a>
+          {%endif%}
+              {% for x in totalPageList%}
+              <a href="/?page={{x}}">{{x}}</a>
+              {%endfor%}
+              
+          {%if pros.has_next%}
+  
+              <a href="/?page={{pros.next_page_number}}">&raquo;</a>
+          {%endif%}
+          </div>
+      </div>
+      
+    </section>
+
+<section>
+
+    <section class="background2">
+        <div class="box-main2">
+          <div class="firsthalf2">
+              <h1 class="text-big2">Exclusive aviable</h1>
+             <p class="text-small2">In this world of 7 million people we need to educate all of them .This is the future of an educated world and we proud to say that the future of education is here</p>
+          <div class="button">
+              <button class="btn2">Buy Now</button>
+
+          </div>
+          </div>
+
+      </section>
+      <section>
+        <div class="brand">
+          <img  class="card-img-top"src="static/img/1.jpeg">  
+          <img  class="card-img-top"src="static/img/2.jpeg">  
+          <img  class="card-img-top"src="static/img/3.jpg">  
+
+           
+
+        </div>
+      </section>
+{%endblock body%}

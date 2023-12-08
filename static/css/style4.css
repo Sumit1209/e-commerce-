@@ -1,0 +1,122 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.sectionAbout{
+    width:100%;
+    min-height:100vh;
+    background-color: #add;
+}
+.containerAbout{
+    width:80%;
+    display:block;
+    margin:auto;
+    padding-top:100px;
+}
+.contentAbout-sectionAbout{
+    float:left;
+    width:50%;
+}
+
+.image-sectionAbout{
+    float:right;
+    width:40%
+}
+.image-sectionAbout img {
+    width:100%;
+    height:auto;
+}
+.contentAbout-sectionAbout .title {
+    text-transform: uppercase;
+    font-size:28px;
+
+}
+
+.contentAbout-sectionAbout .contentAbout h3{
+    margin-top: 20px;
+    color: #5d5d5d;
+    font-size: 28px;
+}
+
+.contentAbout-sectionAbout .contentAbout p {
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size:18px;
+    line-height: 1.5;
+
+}
+.contentAbout-sectionAbout .contentAbout button{
+    margin-top: 30px;
+    background-color: #3d3d3d;
+    padding: 10px 18px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.contentAbout-sectionAbout .contentAbout button:hover{
+    background-color: #a52a2a;
+    color:#fff;
+
+}
+.contentAbout-sectionAbout .social {
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.contentAbout-sectionAbout .social i{
+    color:#a52a2a;
+    font-size: 30px;
+    padding:0px 10px;
+
+}
+
+@media only screen and (max-width:1230px){
+    .containerAbout{
+        width:80%;
+    display:block;
+    margin:auto;
+        padding-top:100px;
+    }
+
+    .contentAbout-sectionAbout{
+        float: none;
+        width:100%;
+        display:block;
+        margin:auto;
+
+    }
+    .image-sectionAbout{
+        float:none;
+        width:100%;
+       
+    }
+    .image-sectionAbout img{
+        width:100%;
+        height: auto;
+        display:block;
+        margin:auto;
+    }
+    .contentAbout-sectionAbout .title {
+        text-align: center;
+        font-size:19px;
+    
+    }
+    
+
+.contentAbout-sectionAbout .contentAbout button{
+   text-align: center;
+
+}
+
+
+ .contentAbout-sectionAbout .social{
+    text-align: center;
+ }
+
+}

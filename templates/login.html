@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock title %}
+
+{%block body%} 
+
+<div class="hero">
+    
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()" >Login</button>
+                <button type="button" class="toggle-btn"onclick="register()">Register</button>
+            </div>
+            <form action="/login" method="post" id="login" class="input-group">
+                {% csrf_token %}
+                <input type="text" class="input-field" name="username2" placeholder="Enter username" value={{username2}}>
+                <input type="text" class="input-field" name="password2" placeholder="Enter Password" value={{password2}}>
+                <input type="checkbox" class="check-box" ><span>Remember password</span>
+                <button type="submit" class="submit-btn">Log</button>
+                <div class="Forregis_" >
+                    <p>Forget password? </p>
+                    <a  href="">Sign Up</a>
+                </div>
+                <div>
+                    {%for message in messages %}
+                    <h6> {{message}}</h6>
+                    {% endfor %}
+                  </div>
+
+
+            </form>
+            <form action="/register" method="post" id="register" class="input-group">
+                {% csrf_token %}
+                <input type="text" class="input-field" name="first_name" value="{{first_name}}"placeholder="Enter Your first Name" required>
+                <input type="text" class="input-field" name="last_name" value="{{last_name}}"placeholder="Enter Your Name" required>
+
+
+                <input type="text" class="input-field" name="username" value="{{username}}"placeholder="User Name" required>
+                <input type="email" class="input-field" name="email_id" value="{{email_id}}" placeholder="Enter your email" required>
+                <input type="text" class="input-field" name="pass1" value="{{pass1}}" placeholder="Enter your password" required>
+                <input type="text" class="input-field" name="pass2" value="{{pass2}}" placeholder="Confirm your password" required>
+                <input type="checkbox" class="check-box" ><span>I agree your term and condition</span>
+                <button type="submit" class="submit-btn">Register</button>
+                
+
+
+            </form>
+            
+        </div>
+    </div>
+    <script>
+        let x=document.getElementById("login");
+        let y=document.getElementById("register");
+        let z=document.getElementById("btn");
+
+        function register(){
+            x.style.left="-400px";
+            y.style.left="50px";
+            z.style.left="110px";
+
+        }
+        function login(){
+            x.style.left="50px";
+            y.style.left="450px";
+            z.style.left="0";
+
+        }
+
+
+    </script>
+{%endblock body%}

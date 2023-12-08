@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} contact {% endblock title %}
+
+{%block body%} 
+{% for message in messages %}
+    <div >
+      <strong>Messages:</strong> {{message}}
+      <button type="button" ></button>
+    </div>
+{% endfor %}  
+<section class="contact" id="Contact">
+    <h2 class="text-advance">Contact Us</h2>
+    <form method="post" action="/contact">
+        {% csrf_token %}
+    <div class="form">
+        <input class="form-input" type="text" name="name",id="name" placeholder="Enter your name">
+        <input class="form-input" type="text" name="phone",id="phone" placeholder="Enter your phone">
+        <input class="form-input" type="text" name="email",id="email" placeholder="Enter your email">
+        <textarea class="form-input" name="discription" id="discription" cols="45" rows="10" placeholder="Enter your Text here"></textarea>
+        <button class="btn btn-dark">Submit</button>
+   </div>
+</form>
+</section> 
+
+{%endblock body%}

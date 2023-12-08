@@ -1,0 +1,384 @@
+/* for section 2 */
+.pic1 {
+    display:flex;
+    justify-content: center; 
+   /*   border: 2px solid red; */
+    
+}
+
+
+.pic1 > div {
+    /* background-color: #c62b2b;*/
+     margin: 10px;
+     padding: 20px;
+     font-size: 30px;
+     width: 224px;
+     height: 334px;
+ }
+ .pic1 img {
+    
+    width: 104%;
+    height: 94%;
+    margin: 6px
+
+}
+@media only screen and (max-width:700px){
+ .pic1 >div {
+  /* background-color: #c62b2b;*/
+    /* margin: -7px; */
+    
+    position: relative;
+    left: -29px;
+ }
+}
+/* for feture */
+
+.secondsection{
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    max-width: 100%;
+    margin: auto;
+    padding: 36px; 
+   
+    box-sizing: border-box;
+  
+}
+
+.feature{
+    /*   border: 2px solid red; 
+    display: flex;
+    padding: 61px 62px;
+    margin: 30px 0px;
+    justify-content: center;*/
+    
+
+    
+
+    display: flex;
+    padding: 22px;
+    margin: auto;
+    justify-content: center;
+    box-sizing: border-box;
+    max-width: 100%;
+    position: relative;
+    left: 0%;
+    top: -24px;
+
+}
+
+.heading{
+    text-align: center; 
+    display: block;
+    
+}
+
+.card{
+    
+ 
+    height: 281px;
+    margin: 1.66% 1%;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: column;
+
+
+
+   
+}
+
+
+.card-img-top{
+    width: 161px;
+    height: 206px;
+}
+.card-text{
+    color: #1c1b1c;
+    font-family: ui-rounded;
+    font-weight: bold;
+}
+.card-text1{
+    color: red;
+    font-weight: bold;
+}
+.carts{
+    background-color: #3d3d3d;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    /* border-radius: 4px; */
+    font-size: 10px;
+    margin: 2px 0px;
+    border: 2px solid white;
+    border-radius: 5px;
+    /* background: none; */
+    /* color: rgb(192, 114, 114); */
+    cursor: pointer;
+    padding: 9px 9px;
+    vertical-align: middle;
+}
+.more{
+    position: absolute;
+    right: 25px;
+    background-color: #891111;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    /* border-radius: 4px; */
+    font-size: 10px;
+    margin: 2px 0px;
+    border: 2px solid white;
+    border-radius: 5px;
+    /* background: none; */
+    /* color: rgb(192, 114, 114); */
+    cursor: pointer;
+    padding: 9px 9px;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width:1144px){
+    /* .feature1{
+        flex-direction: column-reverse;
+        max-width: 100%;
+        align-items: center;
+        margin: 10px 1px;
+        padding: 23px 44px;
+    }
+    .feature{
+        flex-direction: column-reverse;
+        max-width: 100%;
+        align-items: center;
+        margin: 10px 1px;
+        padding: 23px 44px;
+    } */
+    
+    .card{
+        width: 10rem;
+        margin: 13px 16px;
+    }
+    
+    
+    .card-img-top{
+        width: 159px;
+    height: 199px;
+    margin: 20px 1px;
+    }
+    .card-text{
+        color: #1c1b1c;
+        font-family: ui-rounded;
+        font-weight: bold;
+    }
+    .card-text1{
+        color: red;
+        font-weight: bold;
+    }
+
+}
+
+
+
+@media only screen and (max-width:700px){
+    .feature{
+        flex-direction: column-reverse;
+        max-width: 100%;
+        align-items: center;
+        margin: 10px 1px;
+        padding: 23px 44px;
+    }
+    
+    .card{
+        width: 14rem;
+    margin: 14px 103px;
+    }
+    
+    
+    .card-img-top{
+        width: 161px;
+        height: 206px;
+    }
+    .card-text{
+        color: #1c1b1c;
+        font-family: ui-rounded;
+        font-weight: bold;
+    }
+    .card-text1{
+        color: red;
+        font-weight: bold;
+    }
+
+
+}
+
+@media only screen and (max-width:800px){
+
+    .feature{
+    max-width: 100%;
+    align-items: center;
+    padding: 23px 30px;
+    margin: 62px 0;
+    }
+    
+    .card{
+        width: 14rem;
+        margin: 20px -18px;
+    }
+    
+    
+    .card-img-top{
+        width: 161px;
+        height: 206px;
+    }
+    .card-text{
+        color: #1c1b1c;
+        font-family: ui-rounded;
+        font-weight: bold;
+    }
+    .card-text1{
+        color: red;
+        font-weight: bold;
+    }
+
+
+}
+
+
+/* for pagination */
+.center {
+    text-align: center;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+/* for brand */
+.brand{
+    
+    /*   border: 2px solid red; */
+      display: flex;
+      color: rgb(19, 6, 6);
+      align-items: center;
+      justify-content: center;
+      max-width: 50%;
+      height: 250px;
+      margin: auto;
+      height: 80%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 29px 390px;
+      padding: 25px 25px;
+  }
+  .impbrand{
+  
+      margin:0;
+      padding:0;
+  }
+  
+  
+  @media only screen and (max-width:1140px) {
+      .brand{
+          
+          
+      /* flex-direction: column-reverse; */
+      max-width: 100%;
+      align-items: center;
+      margin: 10px 1px;
+      padding: 23px 44px;
+      }
+  
+  }
+  @media only screen and (max-width:500px){
+      .brand {
+          flex-direction: column;
+      }
+  }
+  
+  
+  
+  /* for footer */
+  .footage{
+    box-sizing: border-box;
+    background: black;
+    width:100%;
+    padding :100px 15%;
+    color:white;
+    display:flex;
+
+}
+.footage div {
+    text-align:center;
+
+}
+
+.col-2{
+    flex-grow:2;
+}
+.footage div h3{
+    font-weight:30px;
+    margin-bottom:30px ;
+    letter-spacing: 1px;
+}
+.col-1 a{
+    display:block;
+    text-decoration: none;
+    color:#efefef;
+    margin-bottom: 10px;
+}
+.formss input {
+    width:52%;
+    height:45px;
+    border-radius: 30px;
+    text-align:center;
+    margin-top:20px;
+    margin-bottom: 40px;
+    outline:none;
+    border:none;
+}
+
+.formss button {
+    background: transparent;
+    border:2px solid #fff;
+    color:#fff;
+    border-radius:30px;
+    padding:10px 30px;
+    font-size: 100%;
+    text-align: center;
+    cursor: pointer;
+   
+
+}
+
+.social-icon{
+    margin-top:30px;
+
+}
+.social-icon{
+    font-size:22px;
+    margin:10px;
+    cursor:pointer;
+}
+@media only screen and (max-width:1140px) {
+    .footage{
+    flex-direction: column-reverse;
+    max-width: 100%;
+
+    } 
+
+}

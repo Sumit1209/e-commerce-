@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% block title %} service {% endblock title %}
+
+{%block body%} 
+
+ 
+ <section>
+  
+ <div class="container"> 
+  {%for pro_final,y in allprods%}
+  <div class="heading"><h1>{{pro_final.0.category}}</h1>
+  
+  </div>  
+
+  <div class=" feature">
+    
+     
+{% for i in pro_final%}
+        <div class="card">
+            <img class="card-img-top" src='/media/{{i.image1}}' alt="Card image cap" >
+            <div class="card-body">
+                <p class="card-text">{{i.product_name}}</p>
+                <p class="card-text1">rating</p>
+                <p class="card-text2">$ {{i.price}}</p>
+              <span id="divpr{{i.id}}" class="divpr">
+                <button id="pr{{i.id}}"class="carts cart" >add card</button>
+              </span> 
+              <a href='/Detail/{{i.product_name}}'>  <button class="carts">more det.</button></a>
+
+            </div>
+        </div>
+          
+
+        {% endfor %}
+  </div>
+   
+
+ 
+
+
+
+<div class="center">
+  <div class="pagination">
+  {%if pro_final.has_previous%}
+      <a href="/service?page={{pro_final.previous_page_number}}">&laquo;</a>
+  {%endif%}
+      {% for x in y%}
+      <a href="/service?page={{x}}">{{x}}</a>
+      {%endfor%}
+      
+  {%if pro_final.has_next%}
+
+      <a href="/service?page={{pro_final.next_page_number}}">&raquo;</a>
+  {%endif%}
+  </div>
+</div>
+{%endfor%}
+</div>
+</section>
+
+
+
+{%endblock body%}
+
+{%block js%} 
+
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+   
+<script>
+  console.log('working')
+  if(localStorage.getItem('cart') == null)
+  {
+  var cart={};
+  }
+  else{
+  cart= JSON.parse(localStorage.getItem('cart'));
+  document.getElementById('cart').innerHTML=Object.keys(cart).length;
+  updateCart(cart);
+  }
+  //jQuery starts here//
+  $('.cart').click(function(){
+  
+  console.log('clicked');
+  //jQuery for count the item //
+
+  var idstr= this.id.toString();
+  console.log(idstr);
+  //jQuery for count thespecific id of  item // 
+  if (cart[idstr] !=undefined){
+    cart[idstr]=cart[idstr]+1;
+  }
+  else{
+    cart[idstr] = 1;
+  }
+  console.log(cart);
+  updateCart(cart)
+
+  });
+
+// for the cart + -;
+function updateCart(cart){
+  for (var item in cart){
+    document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='carts minus'>-</button> <span id='val" + item + "''>" + cart[item] + "</span> <button id='plus" + item + "' class='carts plus'> + </button>" ; 
+  }
+    localStorage.setItem('cart',JSON.stringify(cart));
+    document.getElementById('cart').innerHTML=Object.keys(cart).length;
+  }
+//for the number + -
+$('.divpr').on("click","button.minus",function(){
+  console.log("minus click")
+  a=this.id.slice(7,);
+  console.log(a);
+  cart['pr'+a]=cart['pr'+a] -1;
+  cart['pr'+a]= Math.max(0,cart['pr' +a]); // the count not less then zero
+
+  document.getElementById('valpr' + a).innerHTML = cart['pr' + a];
+  updateCart(cart);
+
+});
+
+$('.divpr').on("click","button.plus",function(){
+  console.log("plus click")
+  a=this.id.slice(6,);
+  console.log(a);
+  cart['pr'+a]=cart['pr'+a] +1;
+  document.getElementById('valpr' + a).innerHTML = cart['pr' + a];
+  updateCart(cart);
+});
+  </script> 
+{%endblock js%}  

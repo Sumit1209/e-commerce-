@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %} about {% endblock title %}
+
+{%block body%} 
+
+
+<div class="sectionAbout">
+    <div class="containerAbout">
+        <div class="contentAbout-sectionAbout">
+            <div class="title">
+                <h1>About Us</h1>
+            </div>
+            <div class="contentAbout">
+                <h3>Lorem, ipsum dolor sit amet consectetur adipisicing </h3>
+                <p id="mk">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste cumque enim, ipsam distinctio, iure repellat delectus odio quasi rem numquam unde incidunt quas earum libero? Illo, facilis. Eum, numquam quasi.
+                Quis iste, aspernatur voluptatibus provident sapiente omnis id. Placeat, facilis commodi. Quia, perferendis vero ratione possimus officia quis quod accusamus nesciunt, atque, cupiditate quo optio magni maxime fugit cum doloremque.
+                veniam ipsum numquam, non accusamus iusto? Natus incidunt tenetur saepe adipisci culpa repellat alias corporis, architecto doloribus rerum ad ipsum velit, nisi magnam odio similique ratione numquam perspiciatis non!
+.
+                </p>
+             
+
+                <button id="sk" onclick="toggleHide()">Read More</button>
+                
+            </div>
+            <div class="social">
+                
+
+                <a href=""></a><i class="fa-brands fa-facebook-f"></i></a>
+                <a href=""></a><i class="fa-brands fa-whatsapp"></i></a>
+                <a href=""></a><i class="fa-brands fa-instagram"></i></a>
+                <a href=""></a><i class="fa-brands fa-linkedin"></i></a>
+
+            </div>
+        </div>
+        <div class="image-sectionAbout">
+            <img src="static/img/1.jpg">
+        </div>
+    </div>
+</div>
+
+<script src="js/resp.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    
+  <script>
+  function toggleHide(){
+      sk=document.getElementById('sk');
+      mk=document.getElementById('mk');
+      if (mk.style.display !='none'){
+         mk.style.display = 'none' ;
+      }
+      else {
+          mk.style.display='block'
+      }
+
+  
+  }
+
+      
+  
+  </script>
+{%endblock body%}
